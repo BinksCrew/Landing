@@ -57,7 +57,10 @@
     "dev": "craco start",
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "lint": "prettier --check src/**/*.{js,jsx,ts,tsx,json,css,md}",
+    "lint:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,md}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,css,md}"
   },
   "browserslist": {
     "production": [
@@ -76,12 +79,16 @@
     "@craco/craco": "^7.1.0",
     "@eslint/js": "9.23.0",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^10.1.0",
     "eslint": "9.23.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "7.37.4",
     "globals": "15.15.0",
     "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
     "tailwindcss": "^3.4.17"
   }
 }

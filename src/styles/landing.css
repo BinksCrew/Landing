@@ -1,15 +1,15 @@
 /* Variables de colores sólidos de Pokémon */
 :root {
-  --pokemon-red: #EE1515;
-  --pokemon-blue: #3B4CCA;
-  --pokemon-yellow: #FFDE00;
+  --pokemon-red: #ee1515;
+  --pokemon-blue: #3b4cca;
+  --pokemon-yellow: #ffde00;
   --pokemon-black: #000000;
-  --pokemon-white: #FFFFFF;
-  --soft-white: #F5F5F5;
-  --text-primary: #2D2D2D;
-  --text-secondary: #6B6B6B;
-  --red-dark: #CC0000;
-  --blue-dark: #2A3BAA;
+  --pokemon-white: #ffffff;
+  --soft-white: #f5f5f5;
+  --text-primary: #2d2d2d;
+  --text-secondary: #6b6b6b;
+  --red-dark: #cc0000;
+  --blue-dark: #2a3baa;
 }
 
 /* Reset y base */
@@ -20,7 +20,15 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    sans-serif;
   background-color: var(--pokemon-white);
   color: var(--text-primary);
   line-height: 1.6;
@@ -37,11 +45,22 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--pokemon-red);
   z-index: 1000;
   padding: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition:
+    background-color 0s ease,
+    box-shadow 0s ease;
+}
+
+.header-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  backdrop-filter: saturate(120%) blur(4px);
+}
+
+.header-white {
+  background-color: var(--pokemon-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -78,6 +97,10 @@ body {
   color: var(--pokemon-white);
 }
 
+.logo-text-dark {
+  color: var(--text-primary);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -88,13 +111,21 @@ body {
   background: none;
   border: none;
   font-size: 1rem;
-  color: var(--pokemon-white);
+  color: var(--text-primary);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0.75rem 1.5rem;
   border-radius: 0;
   font-weight: 600;
   border-bottom: 3px solid transparent;
+}
+
+.nav-link-light {
+  color: var(--pokemon-white);
+}
+
+.nav-link-dark {
+  color: var(--text-primary);
 }
 
 .nav-link:hover {
@@ -121,14 +152,40 @@ body {
   box-shadow: 0 2px 0 var(--pokemon-black);
 }
 
+.download-btn-header-light {
+  background: transparent;
+  color: var(--pokemon-white);
+  border-color: var(--pokemon-white);
+  box-shadow: none;
+}
+
+.download-btn-header-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--pokemon-white);
+  transform: none;
+}
+
+.download-btn-header-dark {
+  background: var(--pokemon-yellow);
+  color: var(--pokemon-black);
+  border-color: var(--pokemon-black);
+  box-shadow: 0 4px 0 var(--pokemon-black);
+}
+
+.download-btn-header-dark:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--pokemon-black);
+}
+
 /* Hero Section */
 .hero-section {
-  margin-top: 80px;
-  padding: 5rem 3rem;
-  min-height: calc(100vh - 80px);
+  margin-top: 0;
+  padding: 0 3rem;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--pokemon-white);
+  justify-content: center;
+  color: var(--pokemon-white);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease;
@@ -142,10 +199,14 @@ body {
 .hero-content {
   max-width: 1280px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+}
+
+.hero-full {
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding-top: 80px;
 }
 
 .hero-text {
@@ -154,24 +215,40 @@ body {
   gap: 2rem;
 }
 
+.hero-centered {
+  text-align: center;
+  align-items: center;
+}
+
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
-  color: var(--pokemon-red);
-  text-shadow: 3px 3px 0 var(--pokemon-yellow);
+}
+
+.hero-title-light {
+  color: #fff;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
 .hero-description {
   font-size: 1.25rem;
-  color: var(--text-secondary);
   line-height: 1.8;
+}
+
+.hero-description-light {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center; /* vertically center button contents */
+}
+
+.hero-buttons-centered {
+  justify-content: center;
 }
 
 .cta-primary {
@@ -233,11 +310,21 @@ body {
   box-shadow: 0 2px 0 var(--pokemon-black);
 }
 
+.app-badge-light {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+
+.app-badge-light:hover {
+  transform: none;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.25);
+}
+
 .hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  display: none;
 }
 
 .mockup-image {
@@ -569,11 +656,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
   .hero-text {
     text-align: center;
     align-items: center;
