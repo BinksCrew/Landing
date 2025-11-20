@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import { LOGO } from '@/features/home/constants';
 
 export default function Header({ onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,15 @@ export default function Header({ onNavigate }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = (section) => {
+    onNavigate(section);
+    setIsMenuOpen(false); // Cerrar menú en móvil
+  };
 
   return (
     <header
@@ -28,19 +38,19 @@ export default function Header({ onNavigate }) {
         </div>
         <nav className="nav-menu">
           <button
-            onClick={() => onNavigate('inicio')}
+            onClick={() => handleNavClick('inicio')}
             className={`nav-link ${scrolled ? 'nav-link-dark' : 'nav-link-light'}`}
           >
             Inicio
           </button>
           <button
-            onClick={() => onNavigate('como-jugar')}
+            onClick={() => handleNavClick('como-jugar')}
             className={`nav-link ${scrolled ? 'nav-link-dark' : 'nav-link-light'}`}
           >
             ¿Cómo jugar?
           </button>
           <button
-            onClick={() => onNavigate('premios')}
+            onClick={() => handleNavClick('premios')}
             className={`nav-link ${scrolled ? 'nav-link-dark' : 'nav-link-light'}`}
           >
             Premios
@@ -52,7 +62,40 @@ export default function Header({ onNavigate }) {
             Descargar App
           </Button>
         </nav>
+        <button
+          className="burger-menu"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+      {isMenuOpen && (
+        <div className="mobile-menu">
+          <button
+            onClick={() => handleNavClick('inicio')}
+            className="mobile-nav-link"
+          >
+            Inicio
+          </button>
+          <button
+            onClick={() => handleNavClick('como-jugar')}
+            className="mobile-nav-link"
+          >
+            ¿Cómo jugar?
+          </button>
+          <button
+            onClick={() => handleNavClick('premios')}
+            className="mobile-nav-link"
+          >
+            Premios
+          </button>
+          <Button className="mobile-download-btn">
+            <Download className="w-4 h-4 mr-2" />
+            Descargar App
+          </Button>
+        </div>
+      )}
     </header>
   );
 }

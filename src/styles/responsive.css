@@ -1,0 +1,228 @@
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1.5rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    color: var(--pokemon-white);
+  }
+
+  .header-white .burger-menu {
+    color: var(--text-primary);
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .hero-section {
+    padding: 5rem 1.5rem 3rem;
+    min-height: 90vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .cta-primary,
+  .cta-secondary,
+  .app-badge {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .store-badges {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .store-badges img {
+    width: auto;
+    height: auto;
+  }
+
+  .store-badge-google {
+    height: 70px;
+  }
+
+  .store-badge-apple {
+    height: 50px;
+  }
+
+  .section-container {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .step-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .prizes-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .prizes-title {
+    font-size: 2.5rem;
+  }
+
+  .prizes-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .prizes-showcase {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .prize-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cta-final-section {
+    padding: 4rem 1.5rem;
+    margin: 2rem 1.5rem;
+  }
+
+  .cta-final-title {
+    font-size: 2.2rem;
+  }
+
+  .cta-final-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-final-button {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .mockup-image,
+  .hero-background {
+    display: none;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .prizes-title {
+    font-size: 2rem;
+  }
+
+  .cta-final-title {
+    font-size: 1.8rem;
+  }
+
+  .prize-card {
+    border-radius: 20px;
+  }
+
+  .step-card {
+    border-radius: 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease;
+}

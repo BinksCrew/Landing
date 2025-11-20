@@ -1,0 +1,89 @@
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.step-card {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 0 var(--pokemon-black);
+  border: 4px solid var(--pokemon-black);
+}
+
+.step-card:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 var(--pokemon-black);
+}
+
+.step-card:nth-child(1) {
+  background-color: var(--pokemon-red);
+  color: white;
+}
+
+.step-card:nth-child(1) .step-icon {
+  color: var(--pokemon-yellow);
+}
+
+.step-card:nth-child(2) {
+  background-color: var(--pokemon-blue);
+  color: white;
+}
+
+.step-card:nth-child(2) .step-icon {
+  color: var(--pokemon-yellow);
+}
+
+.step-card:nth-child(3) {
+  background-color: var(--pokemon-yellow);
+  color: var(--pokemon-black);
+}
+
+.step-card:nth-child(3) .step-icon {
+  color: var(--pokemon-red);
+}
+
+.step-card:nth-child(4) {
+  background-color: var(--pokemon-black);
+  color: white;
+}
+
+.step-card:nth-child(4) .step-icon {
+  color: var(--pokemon-yellow);
+}
+
+.step-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.step-number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.step-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}

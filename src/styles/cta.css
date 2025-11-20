@@ -1,0 +1,60 @@
+/* Final CTA Section */
+.cta-final-section {
+  background: var(--pokemon-red);
+  padding: 6rem 3rem;
+  margin: 4rem 3rem;
+  border-radius: 30px;
+  text-align: center;
+  border: 5px solid var(--pokemon-black);
+  box-shadow: 0 8px 0 var(--pokemon-black);
+}
+
+.cta-final-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-final-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--pokemon-white);
+  margin-bottom: 1.5rem;
+  text-shadow: 4px 4px 0 var(--pokemon-black);
+}
+
+.cta-final-description {
+  font-size: 1.3rem;
+  color: var(--pokemon-white);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.cta-final-button {
+  background-color: var(--pokemon-yellow);
+  color: var(--pokemon-black);
+  padding: 1.5rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 4px solid var(--pokemon-black);
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 0 var(--pokemon-black);
+}
+
+.cta-final-button:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 var(--pokemon-black);
+}
+
+.official-app-text {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}

@@ -1,0 +1,188 @@
+/* Prizes Section */
+.prizes-section {
+  background: linear-gradient(
+    135deg,
+    var(--soft-white) 0%,
+    #f0f8ff 50%,
+    var(--pokemon-yellow) 100%
+  );
+  padding: 8rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.prizes-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(255, 222, 0, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(238, 21, 21, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.prizes-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.prizes-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease;
+}
+
+.prizes-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.prizes-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  perspective: 1000px;
+}
+
+.prize-card {
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border: 4px solid var(--pokemon-black);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform-style: preserve-3d;
+  animation: slideInUp 0.8s ease both;
+}
+
+.prize-card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.prize-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.prize-card:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.prize-card:hover {
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.prize-glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(
+    45deg,
+    var(--pokemon-yellow),
+    var(--pokemon-red),
+    var(--pokemon-blue)
+  );
+  border-radius: 35px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.prize-card:hover .prize-glow {
+  opacity: 0.8;
+}
+
+.prize-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prize-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prize-card:hover .prize-image {
+  transform: scale(1.15);
+}
+
+.prize-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(238, 21, 21, 0.3) 0%,
+    rgba(255, 222, 0, 0.3) 100%
+  );
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.prize-card:hover .prize-overlay {
+  opacity: 1;
+}
+
+.prize-badge {
+  background: var(--pokemon-yellow);
+  color: var(--pokemon-black);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 1rem;
+  border: 2px solid var(--pokemon-black);
+  box-shadow: 0 4px 0 var(--pokemon-black);
+}
+
+.prize-content {
+  padding: 2rem;
+  background: linear-gradient(135deg, white 0%, #f9f9f9 100%);
+}
+
+.prize-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.prize-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
