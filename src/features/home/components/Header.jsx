@@ -63,7 +63,7 @@ export default function Header({ onNavigate }) {
           </Button>
         </nav>
         <button
-          className="burger-menu"
+          className={`burger-menu ${isMenuOpen ? 'burger-menu-open' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
