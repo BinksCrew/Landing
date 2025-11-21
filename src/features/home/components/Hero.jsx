@@ -52,7 +52,6 @@ export default function Hero({ isVisible }) {
           <div className="store-badges">
             <a
               href="https://github.com/BinksCrew/App/raw/main/binkscrew.apk"
-              target="_blank"
               rel="noopener noreferrer"
               className="store-link"
             >
@@ -64,7 +63,6 @@ export default function Hero({ isVisible }) {
             </a>
             <a
               href="https://github.com/BinksCrew/App/raw/main/binkscrew.apk"
-              target="_blank"
               rel="noopener noreferrer"
               className="store-link"
             >
